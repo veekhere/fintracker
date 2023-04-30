@@ -17,6 +17,11 @@ import { NotifierModule } from 'angular-notifier';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthenticationComponent } from './components/authentication/authentication.component';
+import { EmailConfirmationComponent } from './components/email-confirmation/email-confirmation.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ExpensesComponent } from './components/expenses/expenses.component';
+import { StatsComponent } from './components/stats/stats.component';
 
 const firebase = [
   AngularFireModule.initializeApp(environment.firebase),
@@ -45,7 +50,12 @@ function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthenticationComponent,
+    EmailConfirmationComponent,
+    NotFoundComponent,
+    ExpensesComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,

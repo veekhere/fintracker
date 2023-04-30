@@ -1,5 +1,28 @@
 {
-  "TEST": {
-    "NAME": "Приветули"
+  "LANGUAGE": {
+    "EN": "English",
+    "RU": "Русский"
+  },
+  "ENUM": {
+    "PAYMENT_SYSTEM": {
+      "VISA": "Visa",
+      "MASTERCARD": "MasterCard",
+      "MIR": "Мир",
+      "UNION_PAY": "UnionPay"
+    }
+  },
+  "NOTIFICATION": {
+    "NOT_AUTHORIZED": "Эта страница доступна только авторизованным пользователям",
+    "EMAIL_IS_NOT_CONFIRMED": "Вы не подтвердили свой e-mail"
+  },
+  "AUTH": {
+    "LOGIN": "Войти",
+    "SIGN_UP": "Создать аккаунт",
+    "LOGOUT": "Выйти",
+    "FORGOT_PASSWORD": "Забыли пароль?",
+    "ALREADY_HAVE_AN_ACCOUNT": "Уже есть аккаунт?",
+    "NO_ACCOUNT": "Еще нет аккаунта?",
+    "CONFIRM_EMAIL_TITLE": "Почти всё. Осталось только подтвердить e-mail",
+    "CONFIRM_EMAIL_TEXT": "Мы отправили письмо с подтверждением на ваш e-mail"
   }
 }

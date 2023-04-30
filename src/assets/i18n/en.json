@@ -1,5 +1,74 @@
 {
-  "TEST": {
-    "NAME": "Hello there"
+  "LANGUAGE": {
+    "EN": "English",
+    "RU": "Русский"
+  },
+  "ENUM": {
+    "PAYMENT_SYSTEM": {
+      "VISA": "Visa",
+      "MASTERCARD": "MasterCard",
+      "MIR": "Mir",
+      "UNION_PAY": "UnionPay"
+    }
+  },
+  "NOTIFICATION": {
+    "NOT_AUTHORIZED": "This area is only available for signed users",
+    "EMAIL_IS_NOT_CONFIRMED": "You should confirm your e-mail"
+  },
+  "AUTH": {
+    "LOGIN": "Login",
+    "SIGN_UP": "Sign Up",
+    "LOGOUT": "Logout",
+    "FORGOT_PASSWORD": "Forgot password?",
+    "ALREADY_HAVE_AN_ACCOUNT": "Already have an account?",
+    "NO_ACCOUNT": "Do not have an account?",
+    "CONFIRM_EMAIL_TITLE": "Almost done. Just confirm your email",
+    "CONFIRM_EMAIL_TEXT": "We send you an e-mail with confirmation link"
+  },
+  "USER": {
+    "EMAIL": "E-mail",
+    "NICKNAME": "Nickname",
+    "AVATAR": "Avatar",
+    "EMAIL_VERIFIED": "E-mail verified"
+  },
+  "ACTION": {
+    "RESET_PASSWORD": "Reset password",
+    "RESEND_CONFIRMATION": "Resend confirmation link",
+    "LANGUAGE": "Language",
+    "UPLOAD": "Upload",
+    "ADD": "Add",
+    "EDIT": "Edit",
+    "DELETE": "Delete"
+  },
+  "TEXT": {
+    "CURRENT_LANGUAGE": "Current language"
+  },
+  "CARD": {
+    "ADD": "Add new card",
+    "EDIT": "Edit card",
+    "DELETE": "Delete card"
+  },
+  "CATEGORY": {
+    "ADD": "Add new category",
+    "EDIT": "Edit category",
+    "DELETE": "Delete category"
+  },
+  "EXPENSE": {
+    "NAME": "Title",
+    "DESCRIPTION": "Description",
+    "AMOUNT": "Amount",
+    "COUNT": "Count",
+    "CARD": "Used card",
+    "CATEGORY": "Category",
+    "DATE": "Date",
+    "SUMMARY": {
+      "CATEGORY": "Category",
+      "TOTAL": "Total"
+    },
+    "STATISTIC": {
+      "SUMMARY": "Summary",
+      "DATE_FROM": "From",
+      "DATE_TO": "to"
+    }
   }
 }

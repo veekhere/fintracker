@@ -31,7 +31,7 @@ export class AuthService {
   ) {
     this.afAuth.authState.subscribe((user) => {
       if (user) {
-        this.user$.next(user);
+        this.user$.next(User.toClientObject(user));
         this.localStorage.setItem(AppConstants.KEYS.USER, this.user$.value);
       } else {
         this.localStorage.removeItem(AppConstants.KEYS.USER);
@@ -58,7 +58,7 @@ export class AuthService {
     return this.user.emailVerified;
   }
 
-  signIn(email: string, password: string) {
+  login(email: string, password: string) {
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
@@ -112,11 +112,21 @@ export class AuthService {
     });
   }
 
-  signOut() {
+  logout() {
     return this.afAuth.signOut().then(() => {
       this.localStorage.removeItem(AppConstants.KEYS.USER);
       // this.router.navigate([AppPathConstants.AUTH]); // !
     });
+  }
+
+  updateUserData(updatableData: Pick<User, 'expenseData'>): void {
+    if (!this.isLoggedIn) {
+      return;
+    }
+    this.user$.next(User.toClientObject({
+      ...this.user$.value,
+      ...updatableData,
+    }));
   }
 
   // Auth logic to run auth providers
@@ -138,12 +148,12 @@ export class AuthService {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       PathUtils.concat([AppConstants.FIRESTORE_PATHS.USERS, user.uid])
     );
-    const userData: Partial<User> = {
+    const userData: Partial<Record<keyof User, string>> = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
+      emailVerified: user.emailVerified
     };
     return userRef.set(userData, { merge: true });
   }
