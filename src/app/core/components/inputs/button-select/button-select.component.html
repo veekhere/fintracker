@@ -1,0 +1,33 @@
+<tui-hosted-dropdown
+  [content]="dropdown"
+  [open]="isOpen$ | async"
+  (openChange)="isOpen$.next($event)"
+>
+  <button
+    tuiButton
+    type="button"
+    appearance="flat"
+    size="m"
+    [iconRight]="arrow"
+    [pseudoHover]="(isOpen$ | async) || null"
+  >
+    {{ label }}
+  </button>
+</tui-hosted-dropdown>
+<ng-template #dropdown>
+  <tui-data-list role="menu">
+    <ng-container *ngFor="let group of options">
+      <tui-opt-group [label]="group?.name">
+        <ng-container *ngFor="let item of group?.items">
+          <button
+            tuiOption
+            [disabled]="item?.disabled"
+            (click)="onClick(item)"
+          >
+            {{ item?.name }}
+          </button>
+        </ng-container>
+      </tui-opt-group>
+    </ng-container>
+  </tui-data-list>
+</ng-template>

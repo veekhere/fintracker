@@ -1,0 +1,6 @@
+*.json
+*.env
+*.yml
+*.graphql
+*.graphqls
+tailwind.config.js
