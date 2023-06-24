@@ -1,0 +1,33 @@
+<header>
+  <fin-menu-button
+    class="menu-button"
+    [items]="navigationService.menuOptions"
+  ></fin-menu-button>
+
+  <a
+    [routerLink]="[paths.EMPTY]"
+    class="logo"
+  >
+    <span>FIN</span>TRACKER
+  </a>
+
+  <nav class="navigation">
+    <ng-container *ngFor="let item of navigationService.menu">
+      <fin-notification-badge
+        [showBadge]="item?.hasNotification$ | async"
+        [badgeBorderColor]="'var(--bg-default)'"
+        [rounded]="false"
+      >
+        <a
+          [routerLink]="item?.link"
+          routerLinkActive="active"
+          class="header__navigation-item"
+        >
+          {{ item?.title | translate }}
+        </a>
+      </fin-notification-badge>
+    </ng-container>
+  </nav>
+
+  <fin-user-button class="user-button"></fin-user-button>
+</header>

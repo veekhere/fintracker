@@ -1,0 +1,23 @@
+<fin-button-select
+  [useTemplate]="true"
+  [options]="data$ | async"
+  (itemSelected)="onSelect($event)"
+>
+  <ng-template let-isOpen>
+    <fin-notification-badge
+      [showBadge]="isNotified() | async"
+      [badgeBorderColor]="'var(--bg-default)'"
+      [rounded]="false"
+    >
+      <div
+        class="menu-button"
+        [ngClass]="isOpen ? 'opened active' : 'closed'"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </fin-notification-badge>
+  </ng-template>
+</fin-button-select>

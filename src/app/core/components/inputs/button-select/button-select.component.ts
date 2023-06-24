@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ContentChild, EventEmitter, Input, Output, TemplateRef, ViewChild } from '@angular/core';
 import { TuiHostedDropdownComponent } from '@taiga-ui/core';
 import { TUI_ARROW } from '@taiga-ui/kit';
 import { BehaviorSubject } from 'rxjs';
@@ -14,7 +14,9 @@ import { ButtonSelectItem } from './domain/button-select-item.model';
 export class ButtonSelectComponent {
 
   @ViewChild(TuiHostedDropdownComponent) component?: TuiHostedDropdownComponent;
+  @ContentChild(TemplateRef) templateRef: TemplateRef<any>;
 
+  @Input() useTemplate = false;
   @Input() label: string;
   @Input() options: ButtonSelectGroup[];
   @Output() itemSelected = new EventEmitter<ButtonSelectItem>();
@@ -23,7 +25,7 @@ export class ButtonSelectComponent {
   readonly isOpen$ = new BehaviorSubject<boolean>(false);
   readonly arrow = TUI_ARROW;
 
-  onClick(item: ButtonSelectItem): void {
+  onSelect(item: ButtonSelectItem): void {
     this.selectedItem$.next(item);
     this.itemSelected.emit(item);
     this.isOpen$.next(false);

@@ -1,4 +1,3 @@
-import { ObjectUtils } from '../utils/object-utils';
 import { ExpenseData } from './expense-data.model';
 
 /**
@@ -30,11 +29,15 @@ export class User {
    */
   expenseData: ExpenseData = null;
 
-  constructor(entity: User = null) {
+  constructor(entity: Partial<User> = null) {
     if (!entity) {
       return null;
     }
-    ObjectUtils.constructorFiller(this, entity);
+    this.uid = entity.uid;
+    this.email = entity.email;
+    this.displayName = entity.displayName;
+    this.photoURL = entity.photoURL;
+    this.emailVerified = entity.emailVerified;
     this.expenseData = ExpenseData.toClientObject(entity.expenseData);
   }
 

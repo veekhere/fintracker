@@ -6,6 +6,7 @@
     "paths": {
       "@app-constants": ["src/app/app.constants"],
       "@core/*": ["src/app/core/*"],
+      "@app/*": ["src/app/*"],
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -29,7 +30,7 @@
       "dom",
       "esnext.asynciterable"
     ],
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "pretty": true,
     "strictNullChecks": false,
     "allowSyntheticDefaultImports": true

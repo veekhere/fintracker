@@ -97,13 +97,13 @@ export class ObjectUtils {
     return this.compareArrays([...arr1], [...arr2]);
   }
 
-   /**
-   * Добавление элемента в массив.
-   * @param array массив.
-   * @param item элемент.
-   * @return индекс элемента в массиве.
-   */
-   static addToArray(array: { id: string }[], item: { id: string }): number {
+  /**
+  * Добавление элемента в массив.
+  * @param array массив.
+  * @param item элемент.
+  * @return индекс элемента в массиве.
+  */
+  static addToArray(array: { id: string; }[], item: { id: string; }): number {
     const index = array.findIndex(o => o.id === item.id);
     if (index === -1) {
       array.push(item);

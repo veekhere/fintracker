@@ -22,6 +22,6 @@ export class LocalStorageService {
   }
 
   private keyMaker(key: string): string {
-    return [AppConstants.KEYS.PREFIX, key].join(': ');
+    return [AppConstants.KEYS.LOCAL_STORAGE_PREFIX, key].join(': ');
   }
 }
