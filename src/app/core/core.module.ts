@@ -16,6 +16,8 @@ import { UserSettingsModalComponent } from './components/common/user-settings-mo
 import { BadgeBorderColorDirective } from './components/directives/badge-border-color.directive';
 import { NotificationBadgeComponent } from './components/common/notification-badge/notification-badge.component';
 import { MenuButtonComponent } from './components/common/menu-button/menu-button.component';
+import { CardComponent } from './components/common/card/card.component';
+import { CaptureParentClassDirective } from './components/directives/capture-parent-class.directive';
 
 const components = [
   HeaderComponent,
@@ -24,10 +26,12 @@ const components = [
   UserSettingsModalComponent,
   NotificationBadgeComponent,
   MenuButtonComponent,
+  CardComponent,
 ];
 
 const directives = [
   BadgeBorderColorDirective,
+  CaptureParentClassDirective,
 ];
 
 const inputs = [
